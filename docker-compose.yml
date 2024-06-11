@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  db:
+    image: mysql:8.4
+    platform: linux/x86_64
+    restart: always
+    ports:
+      - "3100:3306"
+    environment:
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: h65TPPkQNzXVEgWUGTMhTT
+      MYSQL_DATABASE: evohome-db
+      MYSQL_USER: evohome-db-users
+      MYSQL_PASSWORD: evohome-db-password
+
+
