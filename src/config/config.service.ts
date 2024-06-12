@@ -46,6 +46,9 @@ export class ConfigService {
       password: this.config.DATABASE_PASSWORD,
       port: this.config.DATABASE_PORT,
       database: this.config.DATABASE_NAME,
+      define: {
+        underscored: true,
+      },
     };
   }
 

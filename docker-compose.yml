@@ -10,7 +10,10 @@ services:
       MYSQL_ROOT_USER: root
       MYSQL_ROOT_PASSWORD: h65TPPkQNzXVEgWUGTMhTT
       MYSQL_DATABASE: evohome-db
-      MYSQL_USER: evohome-db-users
+      MYSQL_USER: evohome-db-user
       MYSQL_PASSWORD: evohome-db-password
-
-
+    command:
+      - --character-set-server
+      - utf8mb4
+      - --collation-server
+      - utf8mb4_unicode_ci
