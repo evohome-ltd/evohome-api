@@ -1,0 +1,26 @@
+{
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "ts"
+  ],
+  "rootDir": ".",
+  "testRegex": ".*\\.spec\\.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "collectCoverageFrom": [
+    "**/*.(t|j)s"
+  ],
+  "setupFiles": [
+    "dotenv/config"
+  ],
+  "coverageDirectory": "../coverage",
+  "testEnvironment": "node",
+  "clearMocks": true,
+  "resetMocks": true,
+  "restoreMocks": true,
+  "moduleNameMapper": {
+    "@app/(.*)": "<rootDir>/src/$1"
+  }
+}
