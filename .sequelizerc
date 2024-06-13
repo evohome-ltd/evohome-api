@@ -1,5 +1,0 @@
-module.exports = {
-  config: 'sequelize.config.js',
-  'seeders-path': 'seeders',
-  'migrations-path':'migrations',
-};

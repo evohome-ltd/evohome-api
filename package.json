@@ -18,12 +18,13 @@
     "test:cov": "dotenv -e environment/local.envjest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config e2e/jest-e2e.json",
-    "migration:generate": "sequelize-cli migration:generate --name",
-    "migration:migrate": "sequelize-cli db:migrate",
-    "migration:undo": "sequelize-cli db:migrate:undo",
-    "seed:generate": "sequelize-cli seed:generate --name",
-    "seed:all": "sequelize-cli db:seed:all",
-    "seed:undo": "sequelize-cli db:seed:undo:all"
+    "sequelize": "sequelize-cli --config=sequelize.config.js",
+    "migration:generate": "npm run sequelize migration:generate -- --name",
+    "migration:migrate": "npm run sequelize db:migrate",
+    "migration:undo": "npm run sequelize db:migrate:undo",
+    "seed:generate": "npm run sequelize seed:generate -- --name",
+    "seed:all": "npm run sequelize db:seed:all",
+    "seed:undo": "npm run sequelize db:seed:undo:all"
   },
   "dependencies": {
     "@nestjs/common": "^10.3.9",
