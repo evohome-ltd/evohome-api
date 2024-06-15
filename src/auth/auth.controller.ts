@@ -1,6 +1,7 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, Req, UseGuards } from '@nestjs/common';
 import { AuthService } from '@app/auth/auth.service';
 import { AccountModel } from '@app/database/models';
+import { AuthGuard } from '@app/auth/auth.guard';
 
 @Controller('auth')
 export class AuthController {
@@ -12,7 +13,9 @@ export class AuthController {
   }
 
   @Get(':id')
-  async findOne(@Param('id') id: string): Promise<AccountModel> {
+  @UseGuards(AuthGuard)
+  async findOne(@Param('id') id: string, @Req() req): Promise<AccountModel> {
+    console.log(req.user);
     return this.authService.getAccount(id);
   }
 }

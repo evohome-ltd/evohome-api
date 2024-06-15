@@ -3,7 +3,6 @@ import { AccountModel, UserModel } from '@app/database/models';
 
 @Injectable()
 export class AuthService {
-
   public async getAllAccounts(): Promise<AccountModel[]> {
     return AccountModel.findAll({
       include: [UserModel],

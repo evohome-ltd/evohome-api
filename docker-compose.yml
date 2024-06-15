@@ -18,3 +18,26 @@ services:
       - utf8mb4
       - --collation-server
       - utf8mb4_unicode_ci
+  migration:
+    image: migration:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - DATABASE_HOST=db
+      - DATABASE_NAME=evohome-db
+      - DATABASE_PORT=3306
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=h65TPPkQNzXVEgWUGTMhTT
+      - NODE_ENV=local
+    entrypoint: [ "npm", "run", "migration:migrate" ]
+  api:
+    image: api:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      - DATABASE_HOST=db
+      - DATABASE_PORT=3306

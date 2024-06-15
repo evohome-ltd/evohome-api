@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import * as Joi from 'Joi';
+import Joi from 'joi';
 import { SequelizeModuleOptions } from '@nestjs/sequelize';
 import { DatabaseDialect, Environment } from '@app/common/enums';
 
@@ -12,12 +12,7 @@ export class ConfigService {
     DATABASE_PORT: Joi.number().port().default(3100),
     DATABASE_USER: Joi.string(),
     NODE_ENV: Joi.string()
-      .valid(
-        Environment.DEVELOPMENT,
-        Environment.LOCAL,
-        Environment.PRODUCTION,
-        Environment.TEST,
-      )
+      .valid(Environment.DEVELOPMENT, Environment.LOCAL, Environment.PRODUCTION, Environment.TEST)
       .default(Environment.LOCAL),
     PORT: Joi.number().port().default(3000),
   });
