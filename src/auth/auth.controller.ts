@@ -15,7 +15,6 @@ export class AuthController {
   @Get(':id')
   @UseGuards(AuthGuard)
   async findOne(@Param('id') id: string, @Req() req): Promise<AccountModel> {
-    console.log(req.user);
     return this.authService.getAccount(id);
   }
 }
