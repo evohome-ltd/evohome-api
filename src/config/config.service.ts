@@ -19,17 +19,17 @@ export class ConfigService {
   private readonly config: any;
 
   constructor() {
-    const result: Joi.ValidationResult = this.schema.validate(process.env, {
+    const validationResult: Joi.ValidationResult = this.schema.validate(process.env, {
       abortEarly: false,
       presence: 'required',
       allowUnknown: true,
     });
 
-    if (result.error) {
-      throw result.error;
+    if (validationResult.error) {
+      throw validationResult.error;
     }
 
-    this.config = result.value;
+    this.config = validationResult.value;
   }
 
   public get databaseOptions(): SequelizeModuleOptions {
