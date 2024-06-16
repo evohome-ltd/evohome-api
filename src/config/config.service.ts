@@ -34,16 +34,12 @@ export class ConfigService {
 
   public get databaseOptions(): SequelizeModuleOptions {
     return {
-      autoLoadModels: true,
       dialect: DatabaseDialect.MYSQL,
       host: this.config.DATABASE_HOST,
       username: this.config.DATABASE_USER,
       password: this.config.DATABASE_PASSWORD,
       port: this.config.DATABASE_PORT,
       database: this.config.DATABASE_NAME,
-      define: {
-        underscored: true,
-      },
     };
   }
 
