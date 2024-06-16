@@ -1,7 +1,7 @@
-import { Injectable } from '@nestjs/common';
-import Joi from 'joi';
-import { SequelizeModuleOptions } from '@nestjs/sequelize';
 import { DatabaseDialect, Environment } from '@app/common/enums';
+import { Injectable } from '@nestjs/common';
+import { SequelizeModuleOptions } from '@nestjs/sequelize';
+import Joi from 'joi';
 
 @Injectable()
 export class ConfigService {

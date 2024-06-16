@@ -1,6 +1,6 @@
-import { CanActivate, ExecutionContext, Injectable, UnauthorizedException } from '@nestjs/common';
+import { BufferEncoding } from '@app/common/enums';
 import { AccountModel, UserModel } from '@app/database/models';
-import { BufferEncoding } from '@app/common/enums/buffer-encoding.enum';
+import { CanActivate, ExecutionContext, Injectable, UnauthorizedException } from '@nestjs/common';
 
 @Injectable()
 export class AuthGuard implements CanActivate {

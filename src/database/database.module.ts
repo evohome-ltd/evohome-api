@@ -1,8 +1,8 @@
-import { Module } from '@nestjs/common';
-import { SequelizeModule } from '@nestjs/sequelize';
 import { ConfigModule } from '@app/config/config.module';
 import { ConfigService } from '@app/config/config.service';
 import { AccountModel, UserModel } from '@app/database/models';
+import { Module } from '@nestjs/common';
+import { SequelizeModule } from '@nestjs/sequelize';
 
 @Module({
   imports: [
