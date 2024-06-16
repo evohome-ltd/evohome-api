@@ -10,8 +10,8 @@ async function bootstrap() {
   const logger: Logger = new Logger(bootstrap.name);
   const config: ConfigService = app.get(ConfigService);
 
-  await app.listen(config.port, '127.0.0.1', async () => {
-    logger.log(`EvoHome API running on ${await app.getUrl()}`);
+  await app.listen(config.port, async () => {
+    logger.log(`EvoHome API running on http://127.0.0.1:${config.port}`);
   });
 }
 
